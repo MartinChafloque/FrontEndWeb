@@ -1,0 +1,33 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/" (click)="restartBooks()">
+      <img src="assets/img/icon-books.png" alt="" width="30" height="30" class="d-inline-block align-text-top"> Libreria Nacional
+    </a>
+    <form class="d-flex input-group w-auto" #searchForm="ngForm" (ngSubmit)="search(searchForm)" >
+      <div class="input-group" id="show_hide_password">
+        <input
+        type="search"
+        class="form-control"
+        name="filter"
+        #filter="ngModel"
+        placeholder="Buscar Libro"
+        aria-label="Search"
+        [(ngModel)]="result"
+      />
+      <button type="submit" class="btn btn-primary">
+        Buscar
+      </button>
+      </div>
+    </form>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Menú Principal
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#" routerLink="/login">Iniciar Sesión</a></li>
+        <li><a class="dropdown-item" href="#">Crear Libro</a></li>
+        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
