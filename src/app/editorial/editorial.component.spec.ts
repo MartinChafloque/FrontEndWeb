@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
 import { EditorialComponent } from './editorial.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('EditorialComponent', () => {
   let component: EditorialComponent;
@@ -8,6 +10,11 @@ describe('EditorialComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule
+      ],
       declarations: [ EditorialComponent ]
     })
     .compileComponents();
@@ -19,5 +26,9 @@ describe('EditorialComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should create', () => {
+    component.ngOnInit()
   });
 });

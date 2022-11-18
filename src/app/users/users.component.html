@@ -1,0 +1,29 @@
+<div class="users p-5">
+    <button type="button" routerLink="/crearUsuario" class="btn btn-primary">Crear Usuario</button>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Cargo</th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of filterUsers">
+                <td>{{user.username}}</td>
+                <td>{{user.nombre}}</td>
+                <td>{{user.apellido}}</td>
+                <td>{{user.cargo}}</td>
+                <td class="d-flex">
+                    <a [routerLink]="['/modificarUsuario/', user.username]" class="btn btn-primary me-2">Modificar Usuario</a>
+                    <a (click)="deleteUserByUsername(user.username)" class="btn btn-primary">Eliminar Usuario</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        <div class="text-center">
+            <button *ngFor="let boton of botonesPag" (click)="changePage(+boton)" class="me-3">{{boton}}</button>
+        </div>
+</div>

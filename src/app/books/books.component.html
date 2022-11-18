@@ -1,7 +1,8 @@
 <h1 class="text-center py-4">Lista de Libros</h1>
 <div class="container mt-4 vj-destacados">
+    <button type="button" class="btn btn-primary" routerLink="/crearLibro">Crear Libro</button>
     <div class="row">
-        <div *ngFor="let book of books" class="col-md-3 mb-4">
+        <div *ngFor="let book of filterBooks" class="col-md-3 mb-4">
             <div class="card h-100">
                 <img [src]="book.imageUrl" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -11,10 +12,16 @@
                     </p>
                     <p class="card-text">{{book.description}}</p>
                 </div>
-                <div class="card-footer text-muted">
-                    <a href="#" class="btn btn-primary">Detalle</a>
+                <div>
+                    <div class="card-footer text-muted d-flex">
+                        <a [routerLink]="['/modificarLibro/', book.id]" class="btn btn-primary me-2">Modificar Libro</a>
+                        <a (click)="deleteBookById(book.id)" class="btn btn-primary">Eliminar Libro</a>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="text-center">
+        <button *ngFor="let boton of botonesPag" (click)="changePage(+boton)" class="me-3">{{boton}}</button>
     </div>
 </div>

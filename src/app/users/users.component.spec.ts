@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms'
 import { ReactiveFormsModule } from '@angular/forms';
-import { RegisterComponent } from './register.component';
+import { UsersComponent } from './users.component';
 import { HttpClientModule } from '@angular/common/http';
 
-describe('RegisterComponent', () => {
-  let component: RegisterComponent;
-  let fixture: ComponentFixture<RegisterComponent>;
+describe('UsersComponent', () => {
+  let component: UsersComponent;
+  let fixture: ComponentFixture<UsersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -15,16 +15,28 @@ describe('RegisterComponent', () => {
         FormsModule,
         HttpClientModule
       ],
-      declarations: [ RegisterComponent ]
+      declarations: [ UsersComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RegisterComponent);
+    fixture = TestBed.createComponent(UsersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should create', () => {
+    component.ngOnInit()
+  });
+
+  it('should create', () => {
+    component.deleteUserByUsername('Chafo')
+  });
+
+  it('should create', () => {
+    component.changePage(1)
   });
 });

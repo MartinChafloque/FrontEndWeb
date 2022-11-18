@@ -22,6 +22,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /** Hace el login con las credenciales recibidas
+   * 
+   */
   onSubmit(): void {
 
       let userParam: string;

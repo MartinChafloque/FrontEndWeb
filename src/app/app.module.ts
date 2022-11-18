@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-import {FormsModule} from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { EditorialComponent } from './editorial/editorial.component';
+import { CrearLibroComponent } from './crear-libro/crear-libro.component';
+import { ModificarLibroComponent } from './modificar-libro/modificar-libro.component';
+import { UsersComponent } from './users/users.component';
+import { ModificarUsuarioComponent } from './modificar-usuario/modificar-usuario.component';
+import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,12 @@ import { EditorialComponent } from './editorial/editorial.component';
     NavBarComponent,
     LoginComponent,
     RegisterComponent,
-    EditorialComponent
+    EditorialComponent,
+    CrearLibroComponent,
+    ModificarLibroComponent,
+    UsersComponent,
+    ModificarUsuarioComponent,
+    CrearUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +38,7 @@ import { EditorialComponent } from './editorial/editorial.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

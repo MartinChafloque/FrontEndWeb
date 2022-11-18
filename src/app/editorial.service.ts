@@ -10,6 +10,11 @@ export class EditorialService {
 
     constructor(private http: HttpClient){ }
 
+    /** Busca una editorial por id
+     * 
+     * @param id 
+     * @returns un observable de tipo editorial
+     */
     searchById(id: number): Observable<Editorial>{
        return this.http.get<Editorial>("http://localHost:8081/editorials/" + id)
  }

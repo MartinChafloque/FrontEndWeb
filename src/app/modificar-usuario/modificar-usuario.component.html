@@ -1,0 +1,27 @@
+<div class="modificarUsuario p-5" *ngIf="this.user">
+    <form class="custom-form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Usuario</label>
+          <input class="form-control" formControlName="usuario" name="usuario" required="required" [disabled]=true [(ngModel)]="user.username">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Nombre</label>
+          <input class="form-control" formControlName="nombre" name="nombre" required="required" [(ngModel)]="user.nombre">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Apellido</label>
+            <input class="form-control" formControlName="apellido" name="apellido" required="required" [(ngModel)]="user.apellido">
+          </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Fecha de Nacimiento</label>
+            <input type="date" formControlName="fecha" class="form-control" name="fecha" required="required" [(ngModel)]="user.fechaNacimiento">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Cargo</label>
+            <input formControlName="cargo" class="form-control" name="cargo" required="required" [(ngModel)]="user.cargo">
+        </div>
+        <div class="form-group p-1">
+            <button type="submit" class="btn btn-primary">Modificar</button>
+        </div>
+      </form>
+</div>

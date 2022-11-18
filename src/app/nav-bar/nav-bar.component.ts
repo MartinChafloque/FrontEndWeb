@@ -17,6 +17,10 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /** Filtra en la barra de búsqueda
+   * 
+   * @param searchForm 
+   */
   search(searchForm: NgForm){
     if(searchForm.value.filter === ''){
       alert("Inserte algo en la búsqueda") 
@@ -26,6 +30,9 @@ export class NavBarComponent implements OnInit {
     }
   }
 
+  /** Actualiza y muestra la lista de libros
+   * 
+   */
   restartBooks(): void{
     this.bookService.searchAllBooks();
     this.result = '';
